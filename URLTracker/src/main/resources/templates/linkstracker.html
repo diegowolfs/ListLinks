@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>URL Tracker</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/linkstracker.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<form action="track" method="post">
+				<h1>Input URL</h1>
+				<div id="ipt_field">
+					<input id="url_field" name="url_field" class="form-control"
+						type="text" placeholder="Input Full Url (eg.: https://www.ibm.com/br-pt/?ar=1)" th:value="${originallink}" alt="Input Full Url (eg.: https://www.ibm.com/br-pt/?ar=1)"/>
+				</div>
+				<div id="btn_url">
+					<button type="submit" class="btn btn-lg btn-primary">Track!</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div id="listlinks">
+			<table id="linkdata" class="table table-hover" style="max-width: 1110px;">
+				<thead>
+					<tr>
+						<th>Father</th>
+						<th>Son</th>
+					</tr>
+				</thead>
+				<tbody>				
+					<tr th:each="link : ${allLinks}">
+					<td><span th:text="${link.father}"></span></td>
+					<td><span th:text="${link.link}"></span></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script	type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script	type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+	$(document).ready( function () {
+	    $("#linkdata").DataTable();
+	} );
+</script>
+</body>
+</html>

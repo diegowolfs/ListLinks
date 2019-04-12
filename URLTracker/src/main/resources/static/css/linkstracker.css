@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+
+.jumbotron {background-color: #152935; margin-top: 05px; align-self: center;}
+.jumbotron h1{color: white; text-align: center;}
+#btn_url {  display: flex; justify-content: center; margin-top: 05px;}
+.btn-primary {background-color: #3d70b2; border-color: #3d70b2;}
