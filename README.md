@@ -22,6 +22,8 @@ You can download .jar file from: https://bit.ly/2Z8jvKo
 
 To start this application just go to the folder where you saved .jar file and with Prompt use command 'java -jar LinkList-0.0.1-SNAPSHOT.jar'
 
+After Install just run http://localhost:8080 in your browser
+
 ## Operation
 Just input an Full URL path (including https:// or http://) and click on Track! button.
 
